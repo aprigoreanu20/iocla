@@ -19,6 +19,7 @@ add.o: add.c
 
 sub.o: sub.c
 
+
 clean:
 	-rm -f main main.o libops.a add.o sub.o
 	-rm -f *~

@@ -7,7 +7,7 @@ all: main
 
 
 # TODO: Add dependecies here so that the Makefile works
-main: main.c
+main: main.c shop.o
 	$(CC) $(CFLAGS) -o $@ $^
 
 

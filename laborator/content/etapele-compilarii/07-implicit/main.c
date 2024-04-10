@@ -2,6 +2,8 @@
 
 #include <stdio.h>
 
+unsigned long long compute_double(unsigned long long);
+
 int main() {
 	unsigned long long val = 0xFFFFFFFF;
 	unsigned long long double_val;

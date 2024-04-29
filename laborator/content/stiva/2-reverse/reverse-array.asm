@@ -24,7 +24,6 @@ reverse_array:
 
     PRINTF32 `Reversed array: \n\x0`
     xor ecx, ecx
-
 print_array:
     mov edx, [output + 4 * ecx]
     PRINTF32 `%d\n\x0`, edx

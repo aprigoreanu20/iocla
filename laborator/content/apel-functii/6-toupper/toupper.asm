@@ -1,3 +1,5 @@
+%include "../utils/printf32.asm"
+
 section .data
     before_format db "before %s", 13, 10, 0
     after_format db "after %s", 13, 10, 0
@@ -12,8 +14,23 @@ toupper:
     push ebp
     mov ebp, esp
 
+    mov eax, dword [ebp+8]
+    xor ecx, ecx
+
+change_characters:
+    xor ebx, ebx
+    mov bl, byte [eax + ecx]
+
+    cmp ebx, 0
+    je out_of_toupper
+
+    sub bl, 0x20
+    mov byte [eax + ecx], bl
+    inc ecx
+    jmp change_characters
     ; TODO
 
+out_of_toupper:
     leave
     ret
 

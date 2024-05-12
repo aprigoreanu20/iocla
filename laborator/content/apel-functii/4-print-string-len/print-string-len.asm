@@ -2,6 +2,7 @@
 
 section .data
     mystring db "This is my string", 0
+    format db "String length is %u", 10, 0
 
 section .text
 
@@ -25,6 +26,10 @@ test_one_byte:
 
 out:
     PRINTF32 `[PRINTF32]: %d\n[printf]: \x0`, ecx
+    push ecx
+    push format
+    call printf
+    add esp, 8
 
     leave
     ret

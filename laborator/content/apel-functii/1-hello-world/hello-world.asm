@@ -7,6 +7,7 @@ section .text
 
 extern puts
 global main
+
 main:
     push ebp
     mov ebp, esp

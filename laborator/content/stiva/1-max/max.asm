@@ -7,10 +7,13 @@ global main
 main:
     ; numbers are placed in these two registers
     mov eax, 1
-    mov ebx, 4 
+    mov ebx, 4
+    cmp eax, ebx
+    jg print
 
-    ; TODO: get maximum value. You are only allowed to use one conditional jump and push/pop instructions.
-
+    push ebx
+    pop eax
+print:
     PRINTF32 `Max value is: %d\n\x0`, eax ; print maximum value
 
     ret
